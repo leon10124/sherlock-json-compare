@@ -1,0 +1,5 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JSON Structure Compare</title><link rel="stylesheet" href="/assets/style.css"><main>
+<p>獨立本機版 · 關閉啟動視窗即可停止服務</p><h1>JSON Structure Compare</h1><p>比較結構而非排版，忽略指定的時間戳等欄位。這是本機實驗工具，尚未公開部署。</p>
+<p class="muted">內容只傳到此本機主機記憶體處理，不保存到檔案或紀錄；不是純瀏覽器離線工具。不要貼入憑證。每份上限 256 KiB、64 層與 10,000 個節點。數字型別嚴格比較。</p>
+<div class="grid"><section><label for="left">原始 JSON</label><textarea id="left" rows="10">{"updated":1,"items":[{"id":1},{"id":2}]}</textarea></section><section><label for="right">新的 JSON</label><textarea id="right" rows="10">{"updated":2,"items":[{"id":2},{"id":1}]}</textarea></section></div>
+<section><label for="ignore">忽略欄位（精確 JSON Pointer，每行一個；例如 /updated）</label><textarea id="ignore" rows="2">/updated</textarea><label><input type="checkbox" id="unordered"> 忽略所有陣列的順序（仍保留重複元素數量）</label><p class="muted">有先後意義的陣列請勿啟用。最多顯示 200 個差異。</p><button id="compare">比較 JSON</button><pre id="output" aria-live="polite">按比較以查看差異。</pre></section></main><script src="/assets/json-product.js" defer></script></html>
