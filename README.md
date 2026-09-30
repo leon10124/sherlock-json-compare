@@ -27,6 +27,20 @@ Add `/updated` to the ignored JSON Pointer paths and enable unordered arrays. Th
 
 The [machine-readable examples](examples.json) include duplicate-count and boolean-versus-number cases. Every expected result was checked against the actual comparison engine before publication. All-array unordered mode applies recursively; an ignored path matches an exact location, not every field with the same name.
 
+## Use in scripts (source version)
+
+Requires Python 3.10+. The existing Windows ZIP v0.1.0 does not contain this CLI.
+
+```console
+python json_cli.py before.json after.json --ignore /updated --unordered
+```
+
+Repeat `--ignore` for multiple exact paths. Omit `--unordered` for ordered sequences.
+Exit codes: **0** equal, **1** different, **2** invalid input or file error.
+Output is a JSON summary with equality and change count; input values and file names
+are not printed. UTF-8 and UTF-8 BOM files are supported, with the same input limits
+as the comparison engine. Run `python test_json_cli.py` for real subprocess tests.
+
 ## Features and limits
 Object member order is ignored. Exact JSON Pointer exclusions are supported.
 Optional unordered arrays preserve duplicate counts; disable this for sequences.
