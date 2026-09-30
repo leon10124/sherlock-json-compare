@@ -21,7 +21,8 @@ Never paste credentials. The service rejects foreign Host and Origin headers.
 Run `python test_json_compare.py`. Tests include structural edge cases and starting
 the actual standalone HTTP server to compare Unicode values and block cross-origin
 requests. Windows binary packaging has separate executable smoke-test evidence;
-no binary download is publicly published yet.
+the tested Windows package is available on the [release page](https://github.com/leon10124/sherlock-json-compare/releases/tag/v0.1.0).
 
 ## Status
-Verified locally. Not publicly deployed. No independent users or revenue confirmed.
+Functions verified locally; software package publicly distributed on GitHub.
+This is not a publicly hosted web application. No independent users or revenue confirmed.
