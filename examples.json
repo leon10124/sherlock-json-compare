@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Ignore generated timestamp and compare unordered IDs",
+    "left": {
+      "updated": "2026-09-29",
+      "ids": [
+        1,
+        2
+      ]
+    },
+    "right": {
+      "updated": "2026-09-30",
+      "ids": [
+        2,
+        1
+      ]
+    },
+    "ignore_paths": [
+      "/updated"
+    ],
+    "unordered": true,
+    "expected_equal": true
+  },
+  {
+    "name": "Duplicate counts remain significant",
+    "left": [
+      1,
+      1,
+      2
+    ],
+    "right": [
+      1,
+      2,
+      2
+    ],
+    "ignore_paths": [],
+    "unordered": true,
+    "expected_equal": false
+  },
+  {
+    "name": "Keep order for sequences",
+    "left": [
+      "start",
+      "stop"
+    ],
+    "right": [
+      "stop",
+      "start"
+    ],
+    "ignore_paths": [],
+    "unordered": false,
+    "expected_equal": false
+  },
+  {
+    "name": "Boolean differs from number",
+    "left": {
+      "enabled": true
+    },
+    "right": {
+      "enabled": 1
+    },
+    "ignore_paths": [],
+    "unordered": false,
+    "expected_equal": false
+  }
+]

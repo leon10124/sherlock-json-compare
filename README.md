@@ -9,6 +9,24 @@ a browser-only offline app. Demand and willingness to pay remain unvalidated.
 Requires Python 3.10+. Run `python portable_json.py`, or double-click Start.cmd on
 Windows. Your browser opens automatically; close the terminal to stop.
 
+## Try a comparison
+
+Windows: download and extract the [tested ZIP release](https://github.com/leon10124/sherlock-json-compare/releases/tag/v0.1.0), then double-click `JSON-Compare.exe`. Keep its local process running while using the browser interface. The Windows executable does not require Python.
+
+Paste these values into the left and right inputs:
+
+```json
+{"updated":"2026-09-29","ids":[1,2]}
+```
+
+```json
+{"updated":"2026-09-30","ids":[2,1]}
+```
+
+Add `/updated` to the ignored JSON Pointer paths and enable unordered arrays. The result is equal. With unordered arrays disabled, the changed ID order is reported. Keep that option disabled for sequences where order matters.
+
+The [machine-readable examples](examples.json) include duplicate-count and boolean-versus-number cases. Every expected result was checked against the actual comparison engine before publication. All-array unordered mode applies recursively; an ignored path matches an exact location, not every field with the same name.
+
 ## Features and limits
 Object member order is ignored. Exact JSON Pointer exclusions are supported.
 Optional unordered arrays preserve duplicate counts; disable this for sequences.
